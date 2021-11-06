@@ -10,6 +10,11 @@ public class Employee {
 	private int salary;
 	private int deptno;
 
+	// MyBatisのときはこっち
+	public Employee(int empno, String ename, String job, java.sql.Date hiredate, int salary, int deptno) {
+		this(empno, ename, job, new Date(hiredate.getTime()), salary, deptno);
+	}
+
 	public Employee(int empno, String ename, String job, Date hiredate, int salary, int deptno) {
 		super();
 		this.empno = empno;
